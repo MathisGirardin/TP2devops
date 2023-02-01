@@ -95,3 +95,9 @@ Celui-ci est au format YAML.
 Pour créer et lancer les conteneurs : ```docker-compose up``` et ajouter ```-d``` pour lancer en arrière plan
 
 Pour arrêter et supprimer l'ensemble des éléments (volumes, netorks, containers, images) : ```docker-compose down```
+
+## Question 2
+
+## Question 3
+
+## Question 5
