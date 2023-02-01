@@ -91,8 +91,6 @@ Tout d'abord on se connece avec:
 docker login
 ```
 
-## Q 2-1
-
 Et ensuite, pour chaque image, on va créer un tag de l'image puis le push dans dockerhub :
 
 ```
@@ -101,6 +99,9 @@ docker tag my-database USERNAME/my-database:1.0
 docker push USERNAME/my-database  
 
 ```
+
+## Q 2-1
+
 
 ## Introduction
 L'objectif de ce TP est de prendre en main l'environnement Docker et plus si affinitée !
