@@ -1,4 +1,40 @@
-# TP part 01 - Docker
+# TP 01 - Docker
+
+## Q 1-1
+
+Commandes effectuées :
+```
+## Builds the db image using db Dockerfile 
+docker build -t bbc/db .
+
+## Create network for communication between db and adminer
+docker network create app-network
+
+## Run docker images for DB part (adminer and db)
+docker run --name db -e POSTGRES_PASSWORD=pwd -d --network app-network -v /home/tp/Documents/database/db:/var/lib/postgresql/data bbc/db
+
+docker run --network app-network -d --name adminer -p 8080:8080 adminer
+```
+
+Dockerfile de l'image de la db :
+```
+## Dockerfile DB
+
+***
+#Import posgres image from 14.1 alpine
+FROM postgres:14.1-alpine
+
+#Define variables for postgres env
+ENV POSTGRES_DB=db \
+   POSTGRES_USER=usr \
+   POSTGRES_PASSWORD=pwd
+
+#Scripts to create and populate db
+COPY CreateScheme.sql /docker-entrypoint-initdb.d/
+COPY InsertData.sql /docker-entrypoint-initdb.d/
+***
+
+```
 
 ## Introduction
 L'objectif de ce TP est de prendre en main l'environnement Docker et plus si affinitée !
@@ -96,7 +132,7 @@ Pour créer et lancer les conteneurs : ```docker-compose up``` et ajouter ```-d`
 
 Pour arrêter et supprimer l'ensemble des éléments (volumes, netorks, containers, images) : ```docker-compose down```
 
-## Question 2
+## Question 1-2
 
 On a besoin d'un multistage build pour :
     - Réduire les efforts de build
@@ -108,8 +144,6 @@ On a besoin d'un multistage build pour :
 
 Build avec maven puis Run
 
-## Question 3
+# TP part 02
 
-
-
-## Question 5
+# TP part Extra
