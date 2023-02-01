@@ -98,6 +98,18 @@ Pour arrêter et supprimer l'ensemble des éléments (volumes, netorks, containe
 
 ## Question 2
 
+On a besoin d'un multistage build pour :
+    - Réduire les efforts de build
+    - Make Intermediate Image Layers Shareable
+    - Ne pas trop remplir les images Docker et simplifier l'entretien des Dockerfiles
+    - Sécuriser les variables secrètes
+    - Simplify Your Image Stages Internally
+    - Notice You Might Have Deeper Lying Problems
+
+Build avec maven puis Run
+
 ## Question 3
+
+
 
 ## Question 5
