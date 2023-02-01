@@ -36,6 +36,72 @@ COPY InsertData.sql /docker-entrypoint-initdb.d/
 
 ```
 
+## Q 1-2
+
+On a besoin du multistage build pour pouvoir build le fichier java avec maven directement dans le docker.
+
+## Q 1-3/4
+
+On ba build chaque services dans un docker différent, en ajoutants les options nécessaire au bon fonctionnement.
+
+```
+  backend:
+    container_name: backend
+    build: ./simple-api
+    networks:
+      - app-network
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    restart: always
+    build: ./database
+    networks:
+      - app-network
+    env_file:
+      - database/.env
+
+  httpd:
+    container_name: reverse_proxy
+    build: ./httpd
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+```
+
+Ainsi, dans le service backend on a le nom dudocker, le repertoire ciblé, le réseau utilisé et une instruction qui indique que le build de l'image du backend se fait après celle de la db.
+
+Dans le service database on indique le réseau et le fichier des variables d'environnements.
+
+Dans le httpd, on indique le port et le réseau.
+
+Puis on créer le réseau avec :
+```
+networks:
+  app-network:
+ ```
+ 
+## Q 1-5
+
+Tout d'abord on se connece avec:
+```
+docker login
+```
+
+## Q 2-1
+
+Et ensuite, pour chaque image, on va créer un tag de l'image puis le push dans dockerhub :
+
+```
+docker tag my-database USERNAME/my-database:1.0
+
+docker push USERNAME/my-database  
+
+```
+
 ## Introduction
 L'objectif de ce TP est de prendre en main l'environnement Docker et plus si affinitée !
 
