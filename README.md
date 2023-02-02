@@ -131,3 +131,17 @@ On enlève httpd du serveur
 
 ![image](https://user-images.githubusercontent.com/93118154/216350398-51414da9-ff2b-4587-be07-acbd52b372bb.png)
 
+## Q 3-2
+
+Notre playbook possède plusieurs taches qui installe des paquets sur le serveur centos.
+
+   - Clean packages
+   - Intsall device-mapper-persistent-data
+   - Install lvm2
+   - add repo docker
+   - Install Docker
+   - install python3
+   - Pip install
+   - Make sure Docker is running
+
+
