@@ -1,4 +1,4 @@
-# TP 01 - Docker
+# TPs
 
 ## Q 1-1
 
@@ -118,3 +118,16 @@ Pour la configuration de notre Quality Gate on utilise SonarCloud. On renseigne 
 ![image](https://user-images.githubusercontent.com/93118154/216331933-2fd05dc0-40ba-4866-a628-848c591c7a54.png)
 
 ## Q 3-1
+
+On teste l'accès au serveur
+
+![image](https://user-images.githubusercontent.com/93118154/216349424-c0bd8290-ac5a-4a02-8ecc-b68add42576e.png)
+
+On envoie notre distribution au serveur pour qu'il se configure
+
+![image](https://user-images.githubusercontent.com/93118154/216350212-491f202d-9fb1-496d-a59d-57cb5e506c71.png)
+
+On enlève httpd du serveur
+
+![image](https://user-images.githubusercontent.com/93118154/216350398-51414da9-ff2b-4587-be07-acbd52b372bb.png)
+
